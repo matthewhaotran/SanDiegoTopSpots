@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-controller="topSpotsController as topSpotsCtrl" ng-cloak>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>San Diego Top Spots</h1>
+            <p>Best things to do or see in San Diego!</p>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Go</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="topspot in topSpotsCtrl.topspots">
+                    <td>{{topspot.name}}</td>
+                    <td>{{topspot.description}}</td>
+                    <td><a class="btn btn-primary" ng-href="http://maps.google.com/?q={{topspot.location[0]}},{{topspot.location[1]}}">Go To Google Maps</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/app/app.module.js"></script>
+    <script src="/app/topspots/topspots.controller.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
