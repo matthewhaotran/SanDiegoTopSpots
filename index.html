@@ -9,12 +9,13 @@
 </head>
 
 <body ng-controller="topSpotsController as topSpotsCtrl" ng-cloak>
-
+    <div class="jumbotron text-center">
+        <h1>San Diego Top Spots</h1>
+        <h3>Best things to do or see in San Diego!</h3>
+        <p>A NodeJS web application using API calls to pull popular San Diego locations and relative information</p>
+    </div>
     <div class="container">
-        <div class="jumbotron">
-            <h1>San Diego Top Spots</h1>
-            <p>Best things to do or see in San Diego!</p>
-        </div>
+
 
         <table class="table table-striped">
             <thead>
@@ -28,7 +29,9 @@
                 <tr ng-repeat="topspot in topSpotsCtrl.topspots">
                     <td>{{topspot.name}}</td>
                     <td>{{topspot.description}}</td>
-                    <td><a class="btn btn-primary" ng-href="http://maps.google.com/?q={{topspot.location[0]}},{{topspot.location[1]}}">Go To Google Maps</a></td>
+                    <td>
+                        <a class="btn btn-primary" ng-href="http://maps.google.com/?q={{topspot.location[0]}},{{topspot.location[1]}}">Go To Google Maps</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
