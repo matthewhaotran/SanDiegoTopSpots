@@ -1,0 +1,10 @@
+.jumbotron {
+    background-image: url("/app/images/sandiego.jpg");
+    background-size: contain;
+ }
+
+ #header {
+     background-color: lightgrey;
+     display: inline-block;
+     padding: 1.2rem;
+ }
